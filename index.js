@@ -14,7 +14,7 @@ const client = new Client({
     database:'test',        //database name that you want to connect to
 });
 
-//make a connection
+// make a connection
 client.connect()
 
 .then(()=>{
@@ -35,12 +35,16 @@ client.connect()
 // const { Client } = require('pg')
 // const connectDB = async()=>{
 //     const client = new Client({
-//         user:'postgres',
-//         password:'admin'
+//         user:'postgres',         //enter username of database
+//     password:'admin',       //enter passweord of db
+//     host:'localhost',       //host name of the machine where the postgres db is installed 
+//     port:5432,              //here is the port number: 4532 is the defualt, see this file --> 
+//                             //Program Files\PostgreSQL\${VERSION_NUMBER}\data\postgresql.conf
+//     database:'test',        //database name that you want to connect to
 //     })
 //     await client.connect()
-//     const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-//     console.log(res.rows[0].message) // Hello world!
+//     const res = await client.query("SELECT * from wcities WHERE city=$1 OR country=$2",['dubai', 'eg'])
+//     console.table(res.rows) // Hello world!
 //     await client.end()
 // }
 
